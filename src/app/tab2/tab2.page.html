@@ -1,17 +1,37 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title>
-      Tab 2
-    </ion-title>
+    <ion-title class="ion-text-center">Searching by Continent</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 2</ion-title>
-    </ion-toolbar>
+    
   </ion-header>
-
-  <app-explore-container name="Tab 2 page"></app-explore-container>
+  <ion-item>
+    <ion-label position="floating">Continent</ion-label>
+    <ion-input [(ngModel)]="place_continent" inputmode="text"></ion-input>  
+  </ion-item>
+  <ion-button (click)="getDataCon()" expand="block">Find</ion-button>
+  
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>{{continent}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><ion-text><a>{{population_output}}</a></ion-text>{{population}}</p>
+      <p><ion-text><a>{{cases_output}}</a></ion-text>{{cases}}</p>
+      <p><ion-text><a>{{active_output}}</a></ion-text>{{active}}</p>
+      <p><ion-text><a>{{deaths_output}}</a></ion-text>{{deaths}}</p>
+      <p><ion-text><a>{{recovered_output}}</a></ion-text>{{recovered}}</p>
+    </ion-card-content>
+    <ion-card-header>
+      <ion-card-title>{{todayStats}}</ion-card-title>
+    </ion-card-header>
+    <ion-card-content>
+      <p><ion-text><a>{{todayCases_output}}</a></ion-text>{{todayCases}}</p>
+      <p><ion-text><a>{{todayDeaths_output}}</a></ion-text>{{todayDeaths}}</p>
+      <p><ion-text><a>{{todayRecovered_output}}</a></ion-text>{{todayRecovered}}</p>
+    </ion-card-content>
+  </ion-card>
 </ion-content>
